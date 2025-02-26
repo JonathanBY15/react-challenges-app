@@ -1,0 +1,68 @@
+.sp-wrapper {
+  width: 100%;
+}
+
+.sp-layout {
+  width: 100vw;
+  height: calc(100vh - 40px);
+}
+
+.sp-preview {
+  height: calc(100vh - 40px) !important;
+  width: 100%;
+}
+
+.sp-file-explorer,
+.sp-editor {
+  width: 100% !important;
+}
+
+.explorer-editor-container {
+  display: flex;
+}
+
+.explorer-editor-container,
+.preview-container {
+  width: 100%;
+}
+
+.explorer-editor-container div,
+.preview-container div {
+  width: 100%;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.gutter {
+  background-color: rgb(50, 50, 50);
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter-horizontal {
+  cursor: col-resize;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+}
+
+.gutter-vertical {
+  cursor: row-resize;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+}
+
+.editor-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(40, 40, 40);
+  color: rgb(200, 200, 200);
+  padding: 10px 20px;
+  height: 40px;
+}
+
+.challenge-description-container {
+  padding: 10px 20px;
+}
