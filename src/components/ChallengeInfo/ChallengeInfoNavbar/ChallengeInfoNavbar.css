@@ -1,0 +1,17 @@
+.challenge-info-navbar {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+}
+
+button {
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.active-tab {
+  border-bottom: 2px solid blue;
+  color: blue;
+}
