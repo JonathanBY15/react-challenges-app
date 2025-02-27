@@ -45,14 +45,14 @@ const CodeEditor = () => {
         <SandpackProvider files={files} theme={monokaiPro} template="react">
             <div className="editor-nav">Challenge #1: Shopping Cart</div>
             <SandpackLayout>
-                <Split className="split" sizes={sizesHorizontal} onDragEnd={handleDragHorizontal}>
+                <Split className="split" minSize={364} snapOffset={0} sizes={sizesHorizontal} onDragEnd={handleDragHorizontal}>
                     <div className="challenge-description-window">
                         {/*Challenge Description Pane*/}
                         <ChallengeInfo challenge={challengeData}></ChallengeInfo>
                     </div>
                     <div className="explorer-editor-container">
                         {/*Editor and File Explorer Panes*/}
-                        <Split direction="vertical" sizes={sizesVertical} onDragEnd={handleDragVertical}>
+                        <Split direction="vertical" minSize={200} snapOffset={0} sizes={sizesVertical} onDragEnd={handleDragVertical}>
                             <SandpackCodeEditor closableTabs showTabs />
                             <SandpackFileExplorer />
                         </Split>

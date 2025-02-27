@@ -1,17 +1,12 @@
-/* .challenge-info-navbar {
-  display: flex;
-  border-bottom: 2px solid #ddd;
+.medium-width {
+  padding: 4px 8px;
 }
 
-button {
-  padding: 10px 15px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  background: none;
+.small-width {
+  padding: 2px 4px;
 }
 
-.active-tab {
-  border-bottom: 2px solid blue;
-  color: blue;
-} */
+.tiny-width {
+  font-size: 12px;
+  padding: 0;
+}
