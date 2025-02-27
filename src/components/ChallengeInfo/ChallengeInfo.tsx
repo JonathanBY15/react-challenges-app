@@ -23,7 +23,7 @@ const ChallengeInfo: React.FC<{ challenge: Challenge }> = ({ challenge }) => {
   };
 
   return (
-    <div className="challenge-info">
+    <div className="challenge-info-container">
       {/* ChallengeInfoNavbar */}
       <ChallengeInfoNavbar activeTab={activeTab} setActiveTab={setActiveTab} />
 

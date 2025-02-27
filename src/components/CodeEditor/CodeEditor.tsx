@@ -46,7 +46,7 @@ const CodeEditor = () => {
             <div className="editor-nav">Challenge #1: Shopping Cart</div>
             <SandpackLayout>
                 <Split className="split" sizes={sizesHorizontal} onDragEnd={handleDragHorizontal}>
-                    <div className="challenge-description-container">
+                    <div className="challenge-description-window">
                         {/*Challenge Description Pane*/}
                         <ChallengeInfo challenge={challengeData}></ChallengeInfo>
                     </div>
