@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ChallengeInfoNavbar from "./ChallengeInfoNavbar/ChallengeInfoNavbar";
+import ChallengeNavbar from "./ChallengeNavbar/ChallengeNavbar";
 import ChallengeHeader from "./ChallengeHeader/ChallengeHeader";
 import "./ChallengeInfo.css";
 
@@ -19,8 +19,8 @@ const ChallengeInfo: React.FC<{ challenge: Challenge }> = ({ challenge }) => {
 
   return (
     <div className="challenge-info-container">
-      {/* ChallengeInfoNavbar */}
-      <ChallengeInfoNavbar activeTab={activeTab} setActiveTab={setActiveTab} />
+      {/* ChallengeNavbar */}
+      <ChallengeNavbar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <div className="challenge-header-content-container">
         {/* Challenge Header */}

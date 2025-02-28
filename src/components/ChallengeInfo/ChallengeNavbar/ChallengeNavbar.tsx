@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import "./ChallengeInfoNavbar.css";
+import "./ChallengeNavbar.css";
 
 // React Icons
 import { CiMemoPad } from "react-icons/ci";          // Description
@@ -7,12 +7,12 @@ import { FaEye } from "react-icons/fa";              // Preview
 import { FaFlask } from "react-icons/fa6";           // Test Cases
 import { FaFlagCheckered } from "react-icons/fa";    // Solution
 
-interface ChallengeInfoNavbarProps {
+interface ChallengeNavbarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
 }
 
-const ChallengeInfoNavbar: React.FC<ChallengeInfoNavbarProps> = ({ activeTab, setActiveTab }) => {
+const ChallengeNavbar: React.FC<ChallengeNavbarProps> = ({ activeTab, setActiveTab }) => {
   const navbarRef = useRef<HTMLDivElement | null>(null);
   const [navbarWidth, setNavbarWidth] = useState(0);
 
@@ -73,4 +73,4 @@ const ChallengeInfoNavbar: React.FC<ChallengeInfoNavbarProps> = ({ activeTab, se
   );
 };
 
-export default ChallengeInfoNavbar;
+export default ChallengeNavbar;
