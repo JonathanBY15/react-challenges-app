@@ -1,0 +1,19 @@
+{
+    "id": 1,
+    "name": "Reverse a String",
+    "difficulty": "Easy",
+    "description": [
+      { "type": "h1", "content": "Challenge Overview" },
+      { "type": "p", "content": "Write a function that reverses a given string." },
+      { "type": "ul", "content": ["Input: 'hello'", "Output: 'olleh'"] }
+    ],
+    "previewGif": "public/challenge-previews/challenge1.gif",
+    "testCases": [
+      { "type": "p", "content": "Test your solution with these cases:" },
+      { "type": "ul", "content": ["reverseString('apple') → 'elppa'", "reverseString('123') → '321'"] }
+    ],
+    "solution": [
+      { "type": "code", "content": "function reverseString(str) { return str.split('').reverse().join(''); }" }
+    ]
+}
+  

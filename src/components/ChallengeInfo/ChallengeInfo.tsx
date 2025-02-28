@@ -1,17 +1,70 @@
+// import React, { useState } from "react";
+// import ChallengeNavbar from "./ChallengeNavbar/ChallengeNavbar";
+// import ChallengeHeader from "./ChallengeHeader/ChallengeHeader";
+// import ChallengeContent from "./ChallengeContent/ChallengeContent";
+// import "./ChallengeInfo.css";
+
+// // Challenge Props
+// export interface Challenge {
+//   id: number;
+//   name: string;
+//   difficulty: "Easy" | "Medium" | "Hard";
+//   description: string;
+//   previewGif: string;
+//   testCases: string[];
+//   solution: string;
+// }
+
+// const ChallengeInfo: React.FC<{ challenge: Challenge }> = ({ challenge }) => {
+//   const [activeTab, setActiveTab] = useState("Description");
+
+//   return (
+//     <div className="challenge-info-container">
+//       {/* ChallengeNavbar */}
+//       <ChallengeNavbar activeTab={activeTab} setActiveTab={setActiveTab} />
+
+//       <div className="challenge-header-content-container">
+//         {/* Challenge Header */}
+//         <ChallengeHeader id={challenge.id} name={challenge.name} difficulty={challenge.difficulty} />
+
+//         {/* Challenge Content */}
+//         <ChallengeContent
+//           activeTab={activeTab}
+//           description={challenge.description}
+//           previewGif={challenge.previewGif}
+//           testCases={challenge.testCases}
+//           solution={challenge.solution}
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ChallengeInfo;
+
+
+
 import React, { useState } from "react";
 import ChallengeNavbar from "./ChallengeNavbar/ChallengeNavbar";
 import ChallengeHeader from "./ChallengeHeader/ChallengeHeader";
+import ChallengeContent from "./ChallengeContent/ChallengeContent";
 import "./ChallengeInfo.css";
 
-// Challenge Props
+// ContentElement type (matching your new structure)
+export interface ContentElement {
+  type: "p" | "h1" | "h2" | "ul" | "code";
+  content: string | string[]; // Paragraphs, lists, or preformatted code
+}
+
+// Updated Challenge Props to match the new structure
 export interface Challenge {
   id: number;
   name: string;
   difficulty: "Easy" | "Medium" | "Hard";
-  description: string;
+  description: ContentElement[]; // Array of ContentElement
   previewGif: string;
-  testCases: string[];
-  solution: string;
+  testCases: ContentElement[]; // Array of ContentElement
+  solution: ContentElement[]; // Array of ContentElement
 }
 
 const ChallengeInfo: React.FC<{ challenge: Challenge }> = ({ challenge }) => {
@@ -24,25 +77,20 @@ const ChallengeInfo: React.FC<{ challenge: Challenge }> = ({ challenge }) => {
 
       <div className="challenge-header-content-container">
         {/* Challenge Header */}
-        <ChallengeHeader id={challenge.id} name={challenge.name} difficulty={challenge.difficulty} />
+        <ChallengeHeader
+          id={challenge.id}
+          name={challenge.name}
+          difficulty={challenge.difficulty}
+        />
 
-        {/* Tab Content */}
-        <div className="challenge-content">
-          {activeTab === "Description" && <p>{challenge.description}</p>}
-          {activeTab === "Preview" && <img src={challenge.previewGif} alt="Preview" />}
-          {activeTab === "Test Cases" && (
-            <ul>
-              {challenge.testCases.map((test, index) => (
-                <li key={index}>{test}</li>
-              ))}
-            </ul>
-          )}
-          {activeTab === "Solution" && (
-            <pre>
-              <code>{challenge.solution}</code>
-            </pre>
-          )}
-        </div>
+        {/* Challenge Content */}
+        <ChallengeContent
+          activeTab={activeTab}
+          description={challenge.description}
+          previewGif={challenge.previewGif}
+          testCases={challenge.testCases}
+          solution={challenge.solution}
+        />
       </div>
     </div>
   );
