@@ -1,11 +1,11 @@
 {
     "id": 1,
-    "name": "Reverse a String",
+    "name": "FAQ Corousal",
     "difficulty": "Easy",
     "description": [
-      { "type": "h1", "content": "Challenge Overview" },
-      { "type": "p", "content": "Write a function that reverses a given string." },
-      { "type": "ul", "content": ["Input: 'hello'", "Output: 'olleh'"] }
+      { "type": "p", "content": "Build a corousal that displays the answer of just one question at a time." },
+      { "type": "h1", "content": "Requirements:" },
+      { "type": "ul", "content": ["The coruousal should display the answer of the clicked question", "Only one answer should be visible at a time.", "Close the rest of the answers when another is displayed."] }
     ],
     "previewGif": "public/challenge-previews/challenge1.gif",
     "testCases": [

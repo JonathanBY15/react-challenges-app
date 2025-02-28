@@ -1,0 +1,14 @@
+.challenge-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.challenge-content h1 {
+  font-size: 24px;
+}
+
+.challenge-content ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
