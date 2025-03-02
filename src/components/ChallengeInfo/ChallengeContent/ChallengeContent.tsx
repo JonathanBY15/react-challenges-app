@@ -1,3 +1,17 @@
+/**
+ * Displays challenge-related content based on the selected tab.
+ * Renders the challenge description, preview GIF, test cases, and solution.
+ * 
+ * @component
+ * @param {string} activeTab - The currently selected tab.
+ * @param {ContentElement[]} description - The challenge description content.
+ * @param {string} previewGif - URL of the preview GIF.
+ * @param {ContentElement[]} testCases - The challenge test cases content.
+ * @param {ContentElement[]} solution - The challenge solution content.
+ * @returns {JSX.Element} The rendered challenge content.
+ */
+
+
 import React from "react";
 import "./ChallengeContent.css";
 
@@ -18,6 +32,10 @@ interface ChallengeContentProps {
   solution: ContentElement[];
 }
 
+/**
+ * Converts challenge json files into corresponding React elements.
+ * Cases: p, h1, h2, ul, code
+ */
 const renderContent = (contentArray: ContentElement[]) => {
   return contentArray.map((element, index) => {
     switch (element.type) {

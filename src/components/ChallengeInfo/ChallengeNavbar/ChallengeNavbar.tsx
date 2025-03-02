@@ -1,3 +1,14 @@
+/**
+ * Navigation bar for selecting different challenge sections (description, preview, test cases, solution).
+ * Dynamically adjusts button styles based on the navbar width.
+ *  
+ * @component
+ * @param {string} activeTab - The currently selected tab.
+ * @param {(tab: string) => void} setActiveTab - Function to update the active tab.
+ * @returns {JSX.Element} The rendered challenge navigation bar.
+ */
+
+
 import React, { useRef, useState, useEffect } from "react";
 import "./ChallengeNavbar.css";
 
@@ -16,6 +27,9 @@ const ChallengeNavbar: React.FC<ChallengeNavbarProps> = ({ activeTab, setActiveT
   const navbarRef = useRef<HTMLDivElement | null>(null);
   const [navbarWidth, setNavbarWidth] = useState(0);
 
+
+  // Tracks the navbar width and updates state when resized.
+  // Uses a ResizeObserver to handle dynamic changes efficiently.
   useEffect(() => {
     const updateWidth = () => {
       if (navbarRef.current) {
@@ -42,7 +56,8 @@ const ChallengeNavbar: React.FC<ChallengeNavbarProps> = ({ activeTab, setActiveT
     { name: "Solution", icon: <FaFlagCheckered /> }
   ];
 
-  // Determine button class based on width
+  // Determines button size class based on the navbar width.
+  // Class styles are inside "ChallengeNavbar.css"
   let smallButtonClass = "";
   if (navbarWidth < 400) {
     smallButtonClass = "tiny-width";

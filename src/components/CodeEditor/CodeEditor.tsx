@@ -1,3 +1,15 @@
+/**
+ * CodeEditor component to display a <ChallengeInfo>, code editor, file explorer, and live preview.
+ * 
+ * Fetches challenge data(json), displays the challenge name and description, renders a split code editor and file explorer, 
+ * and provides a live preview of the code in the challenge.
+ * 
+ * There is a JSON file for each challenge in "react-challenges-app\src\data\challenge-data" that stores the data for that challenge.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered CodeEditor component.
+ */
+
 import React, { useState, useEffect } from "react";
 import ChallengeInfo, { Challenge } from "../ChallengeInfo/ChallengeInfo";
 import "./CodeEditor.css";
@@ -5,7 +17,7 @@ import { SandpackProvider, SandpackLayout, SandpackFileExplorer, SandpackCodeEdi
 import { monokaiPro } from "@codesandbox/sandpack-themes";
 import Split from "react-split";
 
-// Custom Hook to manage localStorage for sizes
+// Custom Hook to manage localStorage for split screen sizes
 const useStoredSizes = (key: string, defaultSizes: number[]) => {
   const getStoredSizes = () => {
     const stored = localStorage.getItem(key);
@@ -39,6 +51,7 @@ const CodeEditor = () => {
     return <div>Loading challenge...</div>;
   }
 
+  // Files to be displayed in the Sandpack editor
   const files = {
     // "/src/App.js": {
     //   code: challengeData.solution[0].content,
