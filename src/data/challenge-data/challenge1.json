@@ -15,7 +15,10 @@
     "solution": [
       {
         "type": "code",
-        "file": "public/challenge-solutions/challenge-solution-1/challenge-solution-1.txt"
+        "files": [
+          {"fileType": "tsx", "directory": "public/challenge-solutions/challenge-solution-1/challenge-solution-1-tsx.txt"}, 
+          {"fileType": "css", "directory": "public/challenge-solutions/challenge-solution-1/challenge-solution-1-css.txt"}
+        ]
       }
     ]
 }

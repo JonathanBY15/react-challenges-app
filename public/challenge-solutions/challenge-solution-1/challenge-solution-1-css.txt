@@ -1,0 +1,12 @@
+.medium-width {
+  padding: 4px 8px;
+}
+
+.small-width {
+  padding: 2px 4px;
+}
+
+.tiny-width {
+  font-size: 12px;
+  padding: 0;
+}

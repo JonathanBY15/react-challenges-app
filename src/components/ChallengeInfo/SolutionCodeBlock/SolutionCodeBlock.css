@@ -1,0 +1,11 @@
+.solution-code-block {
+  display: flex;
+  flex-direction: column;
+  /* gap: 1px; */
+}
+
+.solution-file-language {
+  padding: 5px;
+  background-color: #282828;
+  border-radius: 5px 5px 0 0;
+}

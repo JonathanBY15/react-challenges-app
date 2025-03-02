@@ -7,7 +7,6 @@
 .challenge-content pre {
   width: 100%;
   display: flex;
-  border-radius: 5px;
   height: 1000px;
 }
 
