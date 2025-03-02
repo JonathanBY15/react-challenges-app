@@ -1,6 +1,10 @@
 import React from "react";
 import "./ChallengeContent.css";
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
 interface ContentElement {
   type: "p" | "h1" | "h2" | "ul" | "code";
   content: string | string[]; // Paragraphs, lists, or preformatted code
@@ -33,9 +37,12 @@ const renderContent = (contentArray: ContentElement[]) => {
         );
       case "code":
         return (
-          <pre key={index}>
-            <code>{element.content}</code>
-          </pre>
+          // <pre key={index}>
+          //   <code>{element.content}</code>
+          // </pre>
+          <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
+            {element.content}
+          </SyntaxHighlighter>
         );
       default:
         return null;

@@ -4,6 +4,11 @@
   gap: 14px;
 }
 
+.challenge-content pre {
+  width: 100%;
+  display: flex;
+}
+
 .challenge-content h1 {
   font-size: 24px;
 }
@@ -11,4 +16,8 @@
 .challenge-content ul {
   list-style-type: disc;
   list-style-position: inside;
+}
+
+.challenge-content img {
+  cursor: pointer;
 }
