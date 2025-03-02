@@ -18,6 +18,7 @@ import "./ChallengeInfo.css";
 export interface ContentElement {
   type: "p" | "h1" | "h2" | "ul" | "code";
   content: string | string[]; // Paragraphs, lists, or preformatted code
+  file: string;
 }
 
 export interface Challenge {
