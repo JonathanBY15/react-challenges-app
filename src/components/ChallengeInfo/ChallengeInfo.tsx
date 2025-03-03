@@ -14,11 +14,16 @@ import ChallengeHeader from "./ChallengeHeader/ChallengeHeader";
 import ChallengeContent from "./ChallengeContent/ChallengeContent";
 import "./ChallengeInfo.css";
 
+interface SolutionFile {
+  fileType: string;
+  directory: string;
+}
+
 // Challenge content elements structure
 export interface ContentElement {
   type: "p" | "h1" | "h2" | "ul" | "code";
   content: string | string[]; // Paragraphs, lists, or preformatted code
-  file: string;
+  files: SolutionFile[];
 }
 
 export interface Challenge {

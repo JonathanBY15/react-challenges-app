@@ -1,11 +1,45 @@
 .solution-code-block {
   display: flex;
   flex-direction: column;
-  /* gap: 1px; */
+  max-height: 600px;
 }
 
 .solution-file-language {
   padding: 5px;
   background-color: #282828;
   border-radius: 5px 5px 0 0;
+}
+
+.solution-code-block {
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+  overflow-y: auto; /* Enables scrolling */
+  padding-right: 10px; /* Prevents content from overlapping with scrollbar */
+}
+
+/* Custom scrollbar styles for Webkit browsers (Chrome, Safari) */
+.solution-code-block::-webkit-scrollbar {
+  width: 8px; /* Scrollbar width */
+}
+
+.solution-code-block::-webkit-scrollbar-track {
+  background: #2e2e2e; /* Track color */
+  border-radius: 4px;
+}
+
+.solution-code-block::-webkit-scrollbar-thumb {
+  background: #4d96a7; /* Thumb color */
+  background: #5c5c5c; /* Thumb color */
+  border-radius: 4px;
+}
+
+.solution-code-block::-webkit-scrollbar-thumb:hover {
+  background: #4b4b4b; /* Darker on hover */
+}
+
+/* For Firefox */
+.solution-code-block {
+  scrollbar-width: thin;
+  scrollbar-color: #5c5c5c #2e2e2e;
 }

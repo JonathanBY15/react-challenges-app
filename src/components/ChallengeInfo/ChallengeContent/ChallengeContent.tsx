@@ -22,7 +22,7 @@ interface SolutionFile {
 interface ContentElement {
   type: "p" | "h1" | "h2" | "ul" | "code";
   content?: string | string[]; // Optional since 'code' elements don't use it
-  files: SolutionFile[]; // Optional since not all types have 'files'
+  files: SolutionFile[];
 }
 
 interface ChallengeContentProps {
