@@ -61,7 +61,8 @@ const CodeEditor = () => {
 
   return (
     <SandpackProvider files={files} theme={monokaiPro} template="react">
-      <div className="editor-nav">{challengeData.name}</div>
+      {/* <div className="editor-nav">{challengeData.name}</div> */}
+      <div className="editor-nav">LeetComponents</div>
       <SandpackLayout>
         <Split className="split" minSize={364} snapOffset={0} sizes={sizesHorizontal} onDragEnd={handleDragHorizontal}>
           <div className="challenge-description-window">
