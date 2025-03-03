@@ -14,9 +14,14 @@
   font-size: 24px;
 }
 
+.challenge-content p {
+  font-size: 16px;
+}
+
 .challenge-content ul {
   list-style-type: disc;
   list-style-position: inside;
+  font-size: 16px;
 }
 
 .challenge-content img {
