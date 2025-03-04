@@ -7,7 +7,7 @@ interface ChallengeListProps {
 
 const ChallengeList: React.FC<ChallengeListProps> = ({ challenges }) => {
   return (
-    <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
+    <div className="flex flex-col items-center gap-4 w-full max-w-lg mx-auto">
       {challenges.map((challenge) => (
         <ChallengeCard key={challenge.number} challenge={challenge} />
       ))}

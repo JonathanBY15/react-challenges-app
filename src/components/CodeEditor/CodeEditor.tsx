@@ -16,6 +16,7 @@ import "./CodeEditor.css";
 import { SandpackProvider, SandpackLayout, SandpackFileExplorer, SandpackCodeEditor, SandpackPreview } from "@codesandbox/sandpack-react";
 import { monokaiPro } from "@codesandbox/sandpack-themes";
 import Split from "react-split";
+import Navbar from "../Navbar/Navbar";
 
 // Custom Hook to manage localStorage for split screen sizes
 const useStoredSizes = (key: string, defaultSizes: number[]) => {

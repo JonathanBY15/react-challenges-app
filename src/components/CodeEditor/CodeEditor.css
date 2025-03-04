@@ -53,6 +53,10 @@
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
 }
 
+.challenge-description-window {
+  padding: 6px 10px;
+}
+
 .editor-nav {
   display: flex;
   justify-content: space-between;
@@ -61,8 +65,4 @@
   color: rgb(200, 200, 200);
   padding: 10px 20px;
   height: 48px;
-}
-
-.challenge-description-window {
-  padding: 6px 10px;
 }

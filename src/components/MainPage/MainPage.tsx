@@ -12,7 +12,7 @@ const MainPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-[#282828] p-8 size-full">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#282828] p-8 size-full">
       <h1 className="text-3xl font-bold mb-6">Coding Challenges</h1>
       <ChallengeList challenges={challenges} />
     </div>
