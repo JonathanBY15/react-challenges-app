@@ -1,4 +1,9 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000; /* Ensures it stays above other elements */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,4 +11,5 @@
   color: rgb(200, 200, 200);
   padding: 10px 20px;
   height: 48px;
+  font-size: 18px;
 }

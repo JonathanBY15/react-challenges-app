@@ -1,6 +1,7 @@
 import React from "react";
 import ChallengeList from "./ChallengeList/ChallengeList";
 import { Challenge } from "./ChallengeCard/ChallengeCard";
+import Navbar from "../Navbar/Navbar";
 
 const MainPage: React.FC = () => {
   const challenges: Challenge[] = [
@@ -13,6 +14,7 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#282828] p-8 size-full">
+      <Navbar></Navbar>
       <h1 className="text-3xl font-bold mb-6">Coding Challenges</h1>
       <ChallengeList challenges={challenges} />
     </div>

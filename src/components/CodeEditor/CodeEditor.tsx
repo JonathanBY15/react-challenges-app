@@ -11,7 +11,6 @@
  */
 
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import ChallengeInfo, { Challenge } from "../ChallengeInfo/ChallengeInfo";
 import "./CodeEditor.css";
 import { SandpackProvider, SandpackLayout, SandpackFileExplorer, SandpackCodeEditor, SandpackPreview } from "@codesandbox/sandpack-react";
@@ -37,7 +36,6 @@ const useStoredSizes = (key: string, defaultSizes: number[]) => {
 };
 
 const CodeEditor = () => {
-  const navigate = useNavigate();
   const [challengeData, setChallengeData] = useState<Challenge | null>(null);
   const [sizesHorizontal, handleDragHorizontal] = useStoredSizes("split-sizes-horizontal", [20, 40, 40]);
   const [sizesVertical, handleDragVertical] = useStoredSizes("split-sizes-vertical", [70, 30]);
@@ -64,8 +62,7 @@ const CodeEditor = () => {
 
   return (
     <SandpackProvider files={files} theme={monokaiPro} template="react">
-      {/* <div className="editor-nav">{challengeData.name}</div> */}
-      <div className="editor-nav" onClick={() => navigate("/")}>LeetComponents</div>
+      <Navbar></Navbar>
       <SandpackLayout>
         <Split className="split" minSize={364} snapOffset={0} sizes={sizesHorizontal} onDragEnd={handleDragHorizontal}>
           <div className="challenge-description-window">

@@ -1,5 +1,6 @@
 .sp-wrapper {
   width: 100%;
+  padding-top: 48px !important; /* Push content below the fixed navbar */
 }
 
 .sp-layout {

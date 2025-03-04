@@ -57,7 +57,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
 
   return (
     <div 
-      className="challenge-card bg-[#3f3f3f] border-b-1 rounded-[3px] p-4 w-full cursor-pointer 
+      className="challenge-card bg-[#444344] border-b-1 rounded-[3px] p-4 w-full cursor-pointer 
       transition duration-200 hover:bg-[#474747]"
       onClick={() => navigate("/code")}
     >
