@@ -1,5 +1,46 @@
+// import React from "react";
+// import { useNavigate } from "react-router-dom";
+// import { PiFire } from "react-icons/pi";
+// import "./ChallengeCard.css";
+
+// export interface Challenge {
+//   name: string;
+//   number: number;
+//   difficulty: "Easy" | "Medium" | "Hard";
+// }
+
+// interface ChallengeCardProps {
+//   challenge: Challenge;
+// }
+
+// const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
+//   const navigate = useNavigate();
+
+//   return (
+//     <div 
+//       className="challenge-card bg-[#3f3f3f] border-b-1 rounded-[3px] p-4 w-full cursor-pointer transition duration-200 hover:bg-[#383838] hover:shadow-xl shadow-cyan-200"
+//       onClick={() => navigate("/code")}
+//     >
+//       <h2 className="text-l text-white">
+//         {challenge.number}. {challenge.name}
+//       </h2>
+      
+//       {/* Difficulty Badge */}
+//       <span className={`badge badge-${challenge.difficulty.toLowerCase()}`}>
+//         <PiFire /> {challenge.difficulty}
+//       </span>
+//     </div>
+//   );
+// };
+
+// export default ChallengeCard;
+
+
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { PiFire } from "react-icons/pi";
+import "./ChallengeCard.css";
 
 export interface Challenge {
   name: string;
@@ -15,26 +56,34 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#3f3f3f] shadow-lg shadow-[#58C4DC]/30 hover:shadow-[#58C4DC]/40 rounded-lg p-4 w-full cursor-pointer transition duration-200" onClick={() => navigate("/code")}>
-      <h2 className="text-xl font-bold text-white">{challenge.name}</h2>
-      <p className="text-white">Challenge #{challenge.number}</p>
-      <p className={`text-sm font-semibold ${getDifficultyColor(challenge.difficulty)}`}>
-        Difficulty: {challenge.difficulty}
-      </p>
+    <div 
+      className="challenge-card bg-[#3f3f3f] border-b-1 rounded-[3px] p-4 w-full cursor-pointer 
+      transition duration-200 hover:bg-[#474747]"
+      onClick={() => navigate("/code")}
+    >
+      <h2 className="text-l text-white">
+        {challenge.number}. {challenge.name}
+      </h2>
+      
+      {/* Difficulty Badge with Tailwind styles */}
+      <span className={`flex min-w-[100px] items-center justify-center text-center gap-1 px-3 py-1 mt-2 text-white text-sm font-semibold rounded-md ${getBadgeColor(challenge.difficulty)}`}>
+        <PiFire /> {challenge.difficulty}
+      </span>
     </div>
   );
 };
 
-const getDifficultyColor = (difficulty: Challenge["difficulty"]) => {
+// Function to determine badge colors dynamically
+const getBadgeColor = (difficulty: Challenge["difficulty"]) => {
   switch (difficulty) {
     case "Easy":
-      return "text-green-500";
+      return "bg-green-600/40";
     case "Medium":
-      return "text-yellow-500";
+      return "bg-yellow-600/50";
     case "Hard":
-      return "text-red-500";
+      return "bg-red-600/40";
     default:
-      return "text-gray-500";
+      return "bg-gray-600/40";
   }
 };
 
