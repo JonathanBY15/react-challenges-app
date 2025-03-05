@@ -15,4 +15,5 @@ const ChallengeList: React.FC<ChallengeListProps> = ({ challenges }) => {
   );
 };
 
+
 export default ChallengeList;

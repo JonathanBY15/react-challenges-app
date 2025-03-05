@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar/Navbar";
 const AppRoutes: React.FC = () => {
   return (
     <Router>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/code" element={<CodeEditor />} />

@@ -16,7 +16,6 @@ import "./CodeEditor.css";
 import { SandpackProvider, SandpackLayout, SandpackFileExplorer, SandpackCodeEditor, SandpackPreview } from "@codesandbox/sandpack-react";
 import { monokaiPro } from "@codesandbox/sandpack-themes";
 import Split from "react-split";
-import Navbar from "../Navbar/Navbar";
 
 // Custom Hook to manage localStorage for split screen sizes
 const useStoredSizes = (key: string, defaultSizes: number[]) => {
@@ -62,7 +61,7 @@ const CodeEditor = () => {
 
   return (
     <SandpackProvider files={files} theme={monokaiPro} template="react">
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <SandpackLayout>
         <Split className="split" minSize={364} snapOffset={0} sizes={sizesHorizontal} onDragEnd={handleDragHorizontal}>
           <div className="challenge-description-window">
