@@ -7,11 +7,11 @@ interface ChallengeListProps {
 
 const ChallengeList: React.FC<ChallengeListProps> = ({ challenges }) => {
   return (
-    <div className="flex flex-col items-center w-full max-w-lg mx-auto">
+    <ul className="w-full max-w-lg mx-auto">
       {challenges.map((challenge) => (
         <ChallengeCard key={challenge.number} challenge={challenge} />
       ))}
-    </div>
+    </ul>
   );
 };
 

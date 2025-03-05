@@ -13,3 +13,7 @@
   height: 48px;
   font-size: 18px;
 }
+
+.navbar span {
+  cursor: pointer;
+}
