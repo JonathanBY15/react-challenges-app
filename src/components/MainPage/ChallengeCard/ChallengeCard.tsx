@@ -19,7 +19,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
   return (
     <li 
       className="challenge-card bg-[#444344] border-b-1 rounded-[3px] p-4 w-full cursor-pointer 
-      transition duration-200 hover:bg-[#474747] list-none"
+      transition duration-200 hover:bg-[#383838] list-none"
       onClick={() => navigate("/code")}
     > 
       <h2 className="text-l text-white">

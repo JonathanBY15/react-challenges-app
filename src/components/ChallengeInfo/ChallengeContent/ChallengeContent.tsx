@@ -1,18 +1,7 @@
-/**
- * Displays challenge-related content based on the selected tab.
- * Renders the challenge description, preview GIF, test cases, and solution.
- * 
- * @component
- * @param {string} activeTab - The currently selected tab.
- * @param {ContentElement[]} description - The challenge description content.
- * @param {string} previewGif - URL of the preview GIF.
- * @param {ContentElement[]} testCases - The challenge test cases content.
- * @param {ContentElement[]} solution - The challenge solution content.
- * @returns {JSX.Element} The rendered challenge content.
- */
-
+import React, { useState } from "react";
 import "./ChallengeContent.css";
 import SolutionCodeBlock from "../SolutionCodeBlock/SolutionCodeBlock";
+import PreviewModal from "../PreviewModal/PreviewModal"; // Import the modal component
 
 interface SolutionFile {
   fileType: string;
@@ -21,8 +10,8 @@ interface SolutionFile {
 
 interface ContentElement {
   type: "p" | "h1" | "h2" | "ul" | "code";
-  content?: string | string[]; // Optional since 'code' elements don't use it
-  files: SolutionFile[];
+  content?: string | string[];
+  files?: SolutionFile[]; // Make files optional since not all types need it
 }
 
 interface ChallengeContentProps {
@@ -55,21 +44,29 @@ const renderContent = (contentArray: ContentElement[]) => {
           </ul>
         );
       case "code":
-        // Render a SolutionCodeBlock for each solution file
         return (
           <>
-            {element.files.map((file, index) => (
-              <SolutionCodeBlock key={index} fileType={file.fileType} directory={file.directory} />
+            {element.files?.map((file, fileIndex) => (
+              <SolutionCodeBlock key={fileIndex} fileType={file.fileType} directory={file.directory} />
             ))}
           </>
         );
-        
       default:
         return null;
     }
   });
 };
 
+/**
+ * The main component that handles rendering the challenge content based on the active tab.
+ * It displays the challenge description, preview, test cases, and solution, with a modal for preview images.
+ * 
+ * @param {string} activeTab - The currently active tab ("Description", "Preview", "Test Cases", "Solution").
+ * @param {ContentElement[]} description - The description content to be displayed when the "Description" tab is active.
+ * @param {string} previewGif - The URL of the preview gif to be displayed when the "Preview" tab is active.
+ * @param {ContentElement[]} testCases - The test cases to be displayed when the "Test Cases" tab is active.
+ * @param {ContentElement[]} solution - The solution content to be displayed when the "Solution" tab is active.
+ */
 const ChallengeContent: React.FC<ChallengeContentProps> = ({
   activeTab,
   description,
@@ -77,10 +74,22 @@ const ChallengeContent: React.FC<ChallengeContentProps> = ({
   testCases,
   solution,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="challenge-content">
       {activeTab === "Description" && renderContent(description)}
-      {activeTab === "Preview" && <img src={previewGif} alt="Preview" />}
+      {activeTab === "Preview" && (
+        <>
+          <img
+            src={previewGif}
+            alt="Preview"
+            className="preview-gif cursor-pointer"
+            onClick={() => setIsModalOpen(true)}
+          />
+          {isModalOpen && <PreviewModal imageUrl={previewGif} onClose={() => setIsModalOpen(false)} />}
+        </>
+      )}
       {activeTab === "Test Cases" && renderContent(testCases)}
       {activeTab === "Solution" && renderContent(solution)}
     </div>
