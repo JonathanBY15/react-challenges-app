@@ -7,6 +7,7 @@ const Navbar: React.FC = () => {
   return (
     <div className="navbar">
       <span onClick={() => navigate("/")}>LeetComponents</span>
+      <span onClick={() => navigate("/auth")}>Auth</span>
     </div>
   );
 };
