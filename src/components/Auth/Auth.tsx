@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaGithub } from 'react-icons/fa'; // Import icons from React Icons
 import { FcGoogle } from "react-icons/fc";
-import './Auth.css';  // Make sure to create this CSS file
+import './Auth.css';
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);  // Track whether login or register form is shown
