@@ -1,12 +1,65 @@
+// import React from "react";
+// import { useNavigate } from "react-router-dom";
+// import { PiFire } from "react-icons/pi";
+// import "./ChallengeCard.css";
+
+// export interface Challenge {
+//   name: string;
+//   number: number;
+//   difficulty: "Easy" | "Medium" | "Hard";
+// }
+
+// interface ChallengeCardProps {
+//   challenge: Challenge;
+// }
+
+// const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
+//   const navigate = useNavigate();
+
+//   return (
+//     <li 
+//       className="challenge-card bg-[#444344] border-b-1 rounded-[3px] p-4 w-full cursor-pointer 
+//       transition duration-200 hover:bg-[#383838] list-none"
+//       onClick={() => navigate("/code")}
+//     > 
+//       <h2 className="text-l text-white">
+//         {challenge.number}. {challenge.name}
+//       </h2>
+
+//       <span className={`flex min-w-[100px] items-center justify-center text-center gap-1 px-3 py-1 mt-2 text-white text-sm font-semibold rounded-md ${getBadgeColor(challenge.difficulty)}`}>
+//         <PiFire /> {challenge.difficulty}
+//       </span>
+//     </li>
+//   );
+// };
+
+// // Function to determine badge colors dynamically
+// const getBadgeColor = (difficulty: Challenge["difficulty"]) => {
+//   switch (difficulty) {
+//     case "Easy":
+//       return "bg-green-600/40";
+//     case "Medium":
+//       return "bg-yellow-600/50";
+//     case "Hard":
+//       return "bg-red-600/40";
+//     default:
+//       return "bg-gray-600/40";
+//   }
+// };
+
+// export default ChallengeCard;
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { PiFire } from "react-icons/pi";
+import { FaArrowRight } from "react-icons/fa";
 import "./ChallengeCard.css";
 
 export interface Challenge {
   name: string;
   number: number;
   difficulty: "Easy" | "Medium" | "Hard";
+  description?: string;
 }
 
 interface ChallengeCardProps {
@@ -17,18 +70,31 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
   const navigate = useNavigate();
 
   return (
-    <li 
-      className="challenge-card bg-[#444344] border-b-1 rounded-[3px] p-4 w-full cursor-pointer 
-      transition duration-200 hover:bg-[#383838] list-none"
+    <li
+      className="bg-[#444344] border border-[#5c5c5c] rounded-md p-3 cursor-pointer 
+                 transition-all duration-200 hover:bg-[#383838] 
+                 hover:bg-gradient-to-b hover:from-[#444344] hover:to-[#61DAFB]/20 
+                 list-none flex flex-col justify-between aspect-[5/2] sm:aspect-[4/2] lg:aspect-[3/2] 
+                 relative group"
       onClick={() => navigate("/code")}
-    > 
-      <h2 className="text-l text-white">
-        {challenge.number}. {challenge.name}
-      </h2>
+    >
+      {/* Top Section */}
+      <div className="flex justify-between text-white text-xs font-semibold">
+        <span>{challenge.number}. {challenge.name}</span>
+        <span className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs ${getBadgeColor(challenge.difficulty)}`}>
+          <PiFire className="text-sm" /> {challenge.difficulty}
+        </span>
+      </div>
 
-      <span className={`flex min-w-[100px] items-center justify-center text-center gap-1 px-3 py-1 mt-2 text-white text-sm font-semibold rounded-md ${getBadgeColor(challenge.difficulty)}`}>
-        <PiFire /> {challenge.difficulty}
-      </span>
+      {/* Middle Section */}
+      <p className="text-gray-300 text-xs text-center flex-1 flex items-center justify-center px-2 leading-tight">
+        {challenge.description || "Solve this challenge to test your skills!"}
+      </p>
+
+      {/* Bottom Right Arrow (Glows when card is hovered) */}
+      <div className="flex justify-end">
+        <FaArrowRight className="text-gray-400 text-base transition-all duration-200 group-hover:text-[#61DAFB] group-hover:drop-shadow-[0_0_8px_#61DAFB]" />
+      </div>
     </li>
   );
 };
