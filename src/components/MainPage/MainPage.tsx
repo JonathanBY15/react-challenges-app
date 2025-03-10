@@ -73,14 +73,16 @@ const MainPage: React.FC = () => {
         <div className="flex items-center gap-4 mb-2">
           <div className="p-4 rounded-2xl shadow-lg bg-gradient-to-r from-blue-500 to-indigo-600 relative">
             <div className="absolute inset-0 rounded-full bg-blue-400 opacity-40 blur-lg"></div>
-            <FaReact className="text-white text-4xl animate-spin-slow relative z-10" />
+            <FaReact className="text-white text-2xl sm:text-xl md:text-4xl relative z-10" />
           </div>
-          <h1 className="text-white text-4xl font-bold">React Coding Challenges</h1>
+          <h1 className="text-white text-2xl sm:text-xl md:text-5xl font-bold">React Coding Challenges</h1>
         </div>
-        <p className="text-gray-300 text-lg mb-6">
+        <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6">
           20+ React coding challenges to practice your frontend skills and prepare for interviews.
         </p>
       </div>
+
+
       {/* Challenge List */}
       <ChallengeList challenges={challenges} />
 
