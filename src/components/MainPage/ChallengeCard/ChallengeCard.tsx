@@ -21,7 +21,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
   return (
       <li
         className="bg-[#161616a6] rounded-md p-3 cursor-pointer 
-                  transition-all duration-200 list-none flex flex-col justify-between aspect-[5/2] sm:aspect-[4/2] lg:aspect-[3/2] 
+                  transition-all duration-200 list-none flex flex-col justify-between aspect-[6/2] sm:aspect-[4/2] lg:aspect-[3/2] 
                   relative hover:bg-[#16161641] 
                   hover:shadow-[0_-4px_8px_0_rgba(59,130,246,0.3),0_4px_8px_0_rgba(59,130,246,0.3),0_0_8px_0_rgba(59,130,246,0.3)]  gap-2
                   group"
