@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaReact } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { FaFilter } from "react-icons/fa";
 import ChallengeList from "./ChallengeList/ChallengeList";
-import ChallengeCard from "./ChallengeCard/ChallengeCard";
 import { Challenge } from "./ChallengeCard/ChallengeCard";
 
 const MainPage: React.FC = () => {
+  const [isDifficultyOpen, setIsDifficultyOpen] = useState(true);
+  const [isChallengeTypeOpen, setIsChallengeTypeOpen] = useState(true);
+
   const challenges: Challenge[] = [
     { name: "Array Manipulation", number: 1, difficulty: "Easy" },
     { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
@@ -11,58 +16,102 @@ const MainPage: React.FC = () => {
     { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
     { name: "Recursion Basics", number: 5, difficulty: "Medium" },
     { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
-    { name: "Graph Traversal", number: 3, difficulty: "Hard" },
-    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
-    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
-    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
     { name: "Array Manipulation", number: 1, difficulty: "Easy" },
     { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
     { name: "Graph Traversal", number: 3, difficulty: "Hard" },
-    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
-    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
+    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
     { name: "Array Manipulation", number: 1, difficulty: "Easy" },
     { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
     { name: "Graph Traversal", number: 3, difficulty: "Hard" },
-    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
-    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
-    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
-    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
     { name: "Graph Traversal", number: 3, difficulty: "Hard" },
-    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
-    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
-    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
-    { name: "Graph Traversal", number: 3, difficulty: "Hard" },
-    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
-    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
-    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
-    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
-    { name: "Graph Traversal", number: 3, difficulty: "Hard" },
-    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
-    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
-    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
-    { name: "Graph Traversal", number: 3, difficulty: "Hard" },
-    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
-    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
-    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    // { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
   ];
 
   return (
-    <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full p-[96px]">
-      <h1 className="text-white text-3xl font-bold mb-6">Coding Challenges</h1>
+    <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full p-[96px] relative">
+      {/* Heading and Subheading */}
+      <div className="w-full max-w-3xl">
+        <div className="flex items-center gap-4 mb-2">
+          <div className="p-4 rounded-2xl shadow-lg bg-gradient-to-r from-blue-500 to-indigo-600 relative">
+            <div className="absolute inset-0 rounded-full bg-blue-400 opacity-40 blur-lg"></div>
+            <FaReact className="text-white text-4xl animate-spin-slow relative z-10" />
+          </div>
+          <h1 className="text-white text-4xl font-bold">React Coding Challenges</h1>
+        </div>
+        <p className="text-gray-300 text-lg mb-6">
+          20+ React coding challenges to practice your frontend skills and prepare for interviews.
+        </p>
+      </div>
       <ChallengeList challenges={challenges} />
-      <ChallengeCard challenge={challenges[2]}></ChallengeCard>
+
+      {/* Filters Section - Anchored to the Right */}
+      <div className="absolute right-10 top-[96px] p-6 rounded-lg shadow-md text-white w-64">
+        <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+          <FaFilter />
+          Filters
+        </h2>
+
+        {/* Difficulty Filter - Accordion */}
+        <div className="mb-4">
+          <button
+            onClick={() => setIsDifficultyOpen(!isDifficultyOpen)}
+            className="w-full text-left text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer"
+          >
+            Difficulty
+            <MdKeyboardArrowDown
+              className={`transform transition-transform ${isDifficultyOpen ? "rotate-180" : ""}`}
+            />
+          </button>
+          <div
+            className={`difficulty-content overflow-hidden transition-all duration-500 ease-in-out ${
+              isDifficultyOpen ? "max-h-[500px]" : "max-h-0"
+            }`}
+          >
+            <div className="flex flex-col gap-2">
+              {["Easy", "Medium", "Hard"].map((difficulty) => (
+                <label key={difficulty} className="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" className="text-blue-500" />
+                  {difficulty}
+                </label>
+              ))}
+            </div>
+          </div>
+          <hr className="my-2 border-gray-500" />
+        </div>
+
+        {/* Challenge Type Filter - Accordion */}
+        <div>
+          <button
+            onClick={() => setIsChallengeTypeOpen(!isChallengeTypeOpen)}
+            className="w-full text-left text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer"
+          >
+            Challenge Type
+            <MdKeyboardArrowDown
+              className={`transform transition-transform ${isChallengeTypeOpen ? "rotate-180" : ""}`}
+            />
+          </button>
+          <div
+            className={`challenge-type-content overflow-hidden transition-all duration-500 ease-in-out ${
+              isChallengeTypeOpen ? "max-h-[500px]" : "max-h-0"
+            }`}
+          >
+            <div className="flex flex-col gap-2">
+              {["Build a component", "Fix a component", "Style a component", "Refactor a component"].map(
+                (type) => (
+                  <label key={type} className="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" className="text-blue-500" />
+                    {type}
+                  </label>
+                )
+              )}
+            </div>
+          </div>
+          <hr className="my-2 border-gray-500" />
+        </div>
+      </div>
+
     </div>
-  ); 
-  
+  );
 };
 
 export default MainPage;
+

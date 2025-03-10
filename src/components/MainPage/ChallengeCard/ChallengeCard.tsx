@@ -71,45 +71,43 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
 
   return (
     <li
-      className="bg-[#444344] border border-[#5c5c5c] rounded-md p-3 cursor-pointer 
-                 transition-all duration-200 hover:bg-[#383838] 
-                 hover:bg-gradient-to-b hover:from-[#444344] hover:to-[#61DAFB]/20 
-                 list-none flex flex-col justify-between aspect-[5/2] sm:aspect-[4/2] lg:aspect-[3/2] 
-                 relative group"
+      className="bg-[#161616a6] rounded-md p-3 cursor-pointer 
+                 transition-all duration-200 list-none flex flex-col justify-between aspect-[5/2] sm:aspect-[4/2] lg:aspect-[3/2] 
+                 relative hover:bg-[#2d3536] group"
       onClick={() => navigate("/code")}
     >
       {/* Top Section */}
       <div className="flex justify-between text-white text-xs font-semibold">
         <span>{challenge.number}. {challenge.name}</span>
         <span className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs ${getBadgeColor(challenge.difficulty)}`}>
-          <PiFire className="text-sm" /> {challenge.difficulty}
+          <PiFire className="text-sm text-amber-50" /> {challenge.difficulty}
         </span>
       </div>
 
       {/* Middle Section */}
-      <p className="text-gray-300 text-xs text-center flex-1 flex items-center justify-center px-2 leading-tight">
-        {challenge.description || "Solve this challenge to test your skills!"}
+      <p className="text-gray-300 text-xs text-start flex-1 flex items-center justify-center px-0 leading-tight">
+        {challenge.description || "Solve this challenge to test your skills! Lorem Lorem ipsum Lorem lorem sssa sads."}
       </p>
 
       {/* Bottom Right Arrow (Glows when card is hovered) */}
       <div className="flex justify-end">
-        <FaArrowRight className="text-gray-400 text-base transition-all duration-200 group-hover:text-[#61DAFB] group-hover:drop-shadow-[0_0_8px_#61DAFB]" />
+        <FaArrowRight className="text-gray-400 text-base transition-all duration-300 group-hover:text-[#61DAFB] group-hover:drop-shadow-[0_0_8px_#61DAFB]" />
       </div>
     </li>
   );
 };
 
-// Function to determine badge colors dynamically
+// Function to determine dificulty colors dynamically
 const getBadgeColor = (difficulty: Challenge["difficulty"]) => {
   switch (difficulty) {
     case "Easy":
-      return "bg-green-600/40";
+      return "text-[#3B865C]";
     case "Medium":
-      return "bg-yellow-600/50";
+      return "text-[#F9C526]";
     case "Hard":
-      return "bg-red-600/40";
+      return "text-[#F2355F]";
     default:
-      return "bg-gray-600/40";
+      return "text-gray-600/40";
   }
 };
 
