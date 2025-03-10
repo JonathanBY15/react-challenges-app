@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaGithub } from 'react-icons/fa'; // Import icons from React Icons
 import { FcGoogle } from "react-icons/fc";
 import './Auth.css';
+import GradientBlob from "../GradientBlob/GradientBlob";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);  // Track whether login or register form is shown
@@ -25,7 +26,8 @@ const Auth = () => {
 
   return (
     <div className="auth-container">
-      <div className="blob"></div> {/* Gradient blob */}
+      <GradientBlob size={250} top="30%" left="40%" opacity={0.6} animationDelay="0s" colors={["#0d6efd", "#00d4ff", "#6a0dad"]} />
+      
       <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
       <form onSubmit={handleSubmit}>
         {/* Show the username field only when the user is signing up */}

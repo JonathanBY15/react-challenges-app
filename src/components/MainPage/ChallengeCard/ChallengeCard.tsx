@@ -1,54 +1,3 @@
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
-// import { PiFire } from "react-icons/pi";
-// import "./ChallengeCard.css";
-
-// export interface Challenge {
-//   name: string;
-//   number: number;
-//   difficulty: "Easy" | "Medium" | "Hard";
-// }
-
-// interface ChallengeCardProps {
-//   challenge: Challenge;
-// }
-
-// const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
-//   const navigate = useNavigate();
-
-//   return (
-//     <li 
-//       className="challenge-card bg-[#444344] border-b-1 rounded-[3px] p-4 w-full cursor-pointer 
-//       transition duration-200 hover:bg-[#383838] list-none"
-//       onClick={() => navigate("/code")}
-//     > 
-//       <h2 className="text-l text-white">
-//         {challenge.number}. {challenge.name}
-//       </h2>
-
-//       <span className={`flex min-w-[100px] items-center justify-center text-center gap-1 px-3 py-1 mt-2 text-white text-sm font-semibold rounded-md ${getBadgeColor(challenge.difficulty)}`}>
-//         <PiFire /> {challenge.difficulty}
-//       </span>
-//     </li>
-//   );
-// };
-
-// // Function to determine badge colors dynamically
-// const getBadgeColor = (difficulty: Challenge["difficulty"]) => {
-//   switch (difficulty) {
-//     case "Easy":
-//       return "bg-green-600/40";
-//     case "Medium":
-//       return "bg-yellow-600/50";
-//     case "Hard":
-//       return "bg-red-600/40";
-//     default:
-//       return "bg-gray-600/40";
-//   }
-// };
-
-// export default ChallengeCard;
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { PiFire } from "react-icons/pi";
@@ -73,7 +22,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
     <li
       className="bg-[#161616a6] rounded-md p-3 cursor-pointer 
                  transition-all duration-200 list-none flex flex-col justify-between aspect-[5/2] sm:aspect-[4/2] lg:aspect-[3/2] 
-                 relative hover:bg-[#2d3536] group"
+                 relative hover:bg-[#16161663] group"
       onClick={() => navigate("/code")}
     >
       {/* Top Section */}

@@ -4,6 +4,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaFilter } from "react-icons/fa";
 import ChallengeList from "./ChallengeList/ChallengeList";
 import { Challenge } from "./ChallengeCard/ChallengeCard";
+import GradientBlob from "../GradientBlob/GradientBlob";
 
 const MainPage: React.FC = () => {
   const [isDifficultyOpen, setIsDifficultyOpen] = useState(true);
@@ -28,6 +29,11 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full p-[96px] relative">
+      <GradientBlob size={300} top="10%" left="10%" />
+      <GradientBlob size={250} bottom="20%" right="15%" opacity={0.5} animationDelay="1s" />
+      <GradientBlob size={200} top="50%" left="50%" opacity={0.7} animationDelay="2s" />
+      <GradientBlob size={280} top="5%" right="5%" opacity={0.6} animationDelay="1.5s" colors={["#4a00e0", "#8e44ad", "#00d4ff"]} />
+      <GradientBlob size={230} bottom="10%" left="20%" opacity={0.5} animationDelay="0.8s" colors={["#1e3c72", "#2a5298", "#6a0dad"]} />
       {/* Heading and Subheading */}
       <div className="w-full max-w-3xl">
         <div className="flex items-center gap-4 mb-2">
@@ -45,7 +51,7 @@ const MainPage: React.FC = () => {
 
       {/* Filters Section - Anchored to the Right */}
       <div className="absolute right-10 top-[96px] p-6 rounded-lg shadow-md text-white w-64">
-        <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+        <h2 className="text-xl mb-4 flex items-center gap-2">
           <FaFilter />
           Filters
         </h2>
