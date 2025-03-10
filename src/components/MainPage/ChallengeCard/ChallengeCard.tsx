@@ -40,7 +40,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
 
       {/* Bottom Right Arrow (Glows when card is hovered) */}
       <div className="flex justify-end">
-        <FaArrowRight className="text-gray-400 text-base transition-all duration-300 group-hover:text-[#61DAFB] group-hover:drop-shadow-[0_0_8px_#61DAFB]" />
+        <FaArrowRight className="text-gray-400 text-base transition-all duration-300 group-hover:text-[#61dafbbd] group-hover:drop-shadow-[0_0_8px_#61DAFB]" />
       </div>
     </li>
   );

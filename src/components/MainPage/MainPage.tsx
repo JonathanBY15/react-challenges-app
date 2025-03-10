@@ -26,6 +26,37 @@ const MainPage: React.FC = () => {
     { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
     { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
     { name: "Recursion Basics", number: 5, difficulty: "Medium" },
+    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Graph Traversal", number: 3, difficulty: "Hard" },
+    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
+    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
+    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
+    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
+    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Graph Traversal", number: 3, difficulty: "Hard" },
+    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
+    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
   ];
 
   return (
@@ -54,11 +85,11 @@ const MainPage: React.FC = () => {
       <ChallengeList challenges={challenges} />
 
       {/* Filters Section - Anchored to the Right */}
-      <div className="absolute right-10 top-[96px] p-6 rounded-lg shadow-md text-white w-64">
-        <h2 className="text-xl mb-4 flex items-center gap-2">
+      <div className="absolute right-10 top-[96px] p-6 rounded-lg shadow-md bg-[#00000057] text-white w-64">
+        {/* <h2 className="text-xl mb-4 flex items-center gap-2">
           <FaFilter />
           Filters
-        </h2>
+        </h2> */}
 
         {/* Difficulty Filter - Accordion */}
         <div className="mb-4">
@@ -79,7 +110,7 @@ const MainPage: React.FC = () => {
             <div className="flex flex-col gap-2">
               {["Easy", "Medium", "Hard"].map((difficulty) => (
                 <label key={difficulty} className="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" className="text-blue-500" />
+                  <input type="checkbox" className="accent-[#3a3a3a10]" />
                   {difficulty}
                 </label>
               ))}
@@ -108,7 +139,7 @@ const MainPage: React.FC = () => {
               {["Build a component", "Fix a component", "Style a component", "Refactor a component"].map(
                 (type) => (
                   <label key={type} className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" className="text-blue-500" />
+                    <input type="checkbox" className="accent-[#3a3a3a10]" />
                     {type}
                   </label>
                 )
