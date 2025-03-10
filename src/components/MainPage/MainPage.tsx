@@ -70,7 +70,7 @@ const MainPage: React.FC = () => {
       <GradientBlob size={230} bottom="10%" left="20%" opacity={0.5} animationDelay="0.8s" colors={["#1e3c72", "#2a5298", "#6a0dad"]} />
       {/* Heading and Subheading */}
       <div className="w-full max-w-3xl">
-        <div className="flex items-center gap-4 mb-2">
+        <div className="flex items-center gap-5 mb-2">
           <div className="p-4 rounded-2xl shadow-lg bg-gradient-to-r from-blue-500 to-indigo-600 relative">
             <div className="absolute inset-0 rounded-full bg-blue-400 opacity-40 blur-lg"></div>
             <FaReact className="text-white text-2xl sm:text-xl md:text-4xl relative z-10" />
