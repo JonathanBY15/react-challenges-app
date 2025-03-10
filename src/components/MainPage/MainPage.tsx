@@ -18,17 +18,20 @@ const MainPage: React.FC = () => {
     { name: "Recursion Basics", number: 5, difficulty: "Medium" },
     { name: "Array Manipulation", number: 1, difficulty: "Easy" },
     { name: "Array Manipulation", number: 1, difficulty: "Easy" },
-    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
-    { name: "Graph Traversal", number: 3, difficulty: "Hard" },
-    { name: "Array Manipulation", number: 1, difficulty: "Easy" },
     { name: "Array Manipulation", number: 1, difficulty: "Easy" },
     { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
     { name: "Graph Traversal", number: 3, difficulty: "Hard" },
-    { name: "Graph Traversal", number: 3, difficulty: "Hard" },
+    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
+    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
+    { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
+    { name: "Dynamic Programming", number: 4, difficulty: "Hard" },
+    { name: "Recursion Basics", number: 5, difficulty: "Medium" },
   ];
 
   return (
-    <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full p-[96px] relative">
+    // <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full p-[96px] relative">
+    <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full p-[96px] relative overflow-auto">
+
       <GradientBlob size={300} top="10%" left="10%" />
       <GradientBlob size={250} bottom="20%" right="15%" opacity={0.5} animationDelay="1s" />
       <GradientBlob size={200} top="50%" left="50%" opacity={0.7} animationDelay="2s" />
@@ -47,6 +50,7 @@ const MainPage: React.FC = () => {
           20+ React coding challenges to practice your frontend skills and prepare for interviews.
         </p>
       </div>
+      {/* Challenge List */}
       <ChallengeList challenges={challenges} />
 
       {/* Filters Section - Anchored to the Right */}
@@ -64,7 +68,7 @@ const MainPage: React.FC = () => {
           >
             Difficulty
             <MdKeyboardArrowDown
-              className={`transform transition-transform ${isDifficultyOpen ? "rotate-180" : ""}`}
+              className={`transform transition-transform duration-600 ${isDifficultyOpen ? "rotate-180" : ""}`}
             />
           </button>
           <div

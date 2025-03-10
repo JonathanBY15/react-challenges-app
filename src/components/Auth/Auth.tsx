@@ -26,8 +26,14 @@ const Auth = () => {
 
   return (
     <div className="auth-container">
-      <GradientBlob size={250} top="30%" left="40%" opacity={0.6} animationDelay="0s" colors={["#0d6efd", "#00d4ff", "#6a0dad"]} />
-      
+      <GradientBlob size={250} top="30%" left="40%" opacity={0.6} animationDelay="0s" colors={["#00bcd4", "#3498db", "#2c3e50"]} />
+      <GradientBlob size={200} top="60%" right="10%" opacity={0.4} animationDelay="0.5s" colors={["#6a0dad", "#9b59b6", "#2c3e50"]} />
+      <GradientBlob size={180} top="10%" left="70%" opacity={0.5} animationDelay="1s" colors={["#00bcd4", "#2980b9", "#2c3e50"]} />
+      <GradientBlob size={220} top="20%" left="10%" opacity={0.7} animationDelay="1.5s" colors={["#3498db", "#2980b9", "#2c3e50"]} />
+      <GradientBlob size={250} top="75%" left="50%" opacity={0.6} animationDelay="2s" colors={["#6a0dad", "#8e44ad", "#2c3e50"]} />
+      <GradientBlob size={300} top="50%" right="5%" opacity={0.4} animationDelay="2.5s" colors={["#95a5a6", "#3498db", "#2c3e50"]} />
+      <GradientBlob size={270} bottom="15%" left="15%" opacity={0.5} animationDelay="3s" colors={["#2980b9", "#00bcd4", "#2c3e50"]} />
+
       <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
       <form onSubmit={handleSubmit}>
         {/* Show the username field only when the user is signing up */}
