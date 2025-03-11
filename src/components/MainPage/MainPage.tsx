@@ -82,7 +82,6 @@ const MainPage: React.FC = () => {
         </p>
       </div>
 
-
       {/* Challenge List */}
       <ChallengeList challenges={challenges} />
 

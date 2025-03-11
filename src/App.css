@@ -28,7 +28,7 @@ body {
 
 /* Style the scrollbar */
 ::-webkit-scrollbar {
-  width: 10px; /* Adjust width of the scrollbar */
+  width: 12px; /* Adjust width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
@@ -37,21 +37,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    to right,
-    #4d96a7,
-    #0b7289
-  ); /* Gradient blue for the scrollbar thumb */
+  background-color: #444444; /* Dark gray thumb */
   border-radius: 10px;
   border: 2px solid #1c1c1c; /* Border around the thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    to right,
-    #0b7289,
-    #4d96a7
-  ); /* Inverted gradient on hover */
+  background-color: #505050; /* Slightly lighter gray on hover */
 }
 
 /* For Firefox */
@@ -66,18 +58,10 @@ scrollbar-track {
 }
 
 scrollbar-thumb {
-  background: linear-gradient(
-    to right,
-    #4d96a7,
-    #0b7289
-  ); /* Gradient blue for Firefox */
+  background-color: #444444; /* Dark gray thumb for Firefox */
   border-radius: 10px;
 }
 
 scrollbar-thumb:hover {
-  background: linear-gradient(
-    to right,
-    #0b7289,
-    #4d96a7
-  ); /* Inverted gradient on hover for Firefox */
+  background-color: #505050; /* Slightly lighter gray on hover for Firefox */
 }
