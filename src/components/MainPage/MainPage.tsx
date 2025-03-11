@@ -105,7 +105,7 @@ const MainPage: React.FC = () => {
               isDifficultyOpen ? "max-h-[500px]" : "max-h-0"
             }`}
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1 font-extralight">
               {["Easy", "Medium", "Hard"].map((difficulty) => (
                 <label key={difficulty} className="flex items-center gap-2 cursor-pointer">
                   <input type="checkbox" className="accent-[#3a3a3a10]" />
@@ -133,7 +133,7 @@ const MainPage: React.FC = () => {
               isChallengeTypeOpen ? "max-h-[500px]" : "max-h-0"
             }`}
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1 font-extralight">
               {["Build a component", "Fix a component", "Style a component", "Refactor a component"].map(
                 (type) => (
                   <label key={type} className="flex items-center gap-2 cursor-pointer">
