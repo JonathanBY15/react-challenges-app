@@ -29,14 +29,14 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
       >
       {/* Top Section */}
       <div className="flex justify-between text-white font-semibold">
-        <span>{challenge.number}. {challenge.name}</span>
+        <span className="text-md md:text-lg">{challenge.number}. {challenge.name}</span>
         <span className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs ${getBadgeColor(challenge.difficulty)}`}>
           <PiFire className="text-sm text-amber-50" /> {challenge.difficulty}
         </span>
       </div>
 
       {/* Middle Section */}
-      <p className="text-gray-300 text-start flex-1 flex justify-center px-0 leading-tight">
+      <p className="text-gray-300 text-sm md:text-md text-start flex-1 flex justify-center px-0 leading-tight">
         {challenge.description || "Solve this challenge to test your skills! Lorem Lorem ipsum Lorem lorem sssa sads."}
       </p>
 

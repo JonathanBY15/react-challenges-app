@@ -77,7 +77,7 @@ const MainPage: React.FC = () => {
           </div>
           <h1 className="text-white text-2xl sm:text-xl md:text-5xl font-bold">React Coding Challenges</h1>
         </div>
-        <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6">
+        <p className="text-gray-300 text-base sm:text-md md:text-lg mb-6">
           20+ React coding challenges to practice your frontend skills and prepare for interviews.
         </p>
       </div>

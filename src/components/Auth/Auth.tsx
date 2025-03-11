@@ -9,7 +9,6 @@ const Auth = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
-  const [username, setUsername] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,7 +19,7 @@ const Auth = () => {
         console.log('Passwords do not match!');
         return;
       }
-      console.log('Registering with', { username, email, password });
+      console.log('Registering with', { email, password });
     }
   };
 
@@ -35,29 +34,7 @@ const Auth = () => {
 
       <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
       <form onSubmit={handleSubmit}>
-        {/* Show the username field only when the user is signing up */}
-        {!isLogin && (
-          <div className="form-group">
-            <div className="relative">
-              <input
-                type="text"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder=" "
-                required
-                className="block w-full px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-green-600 dark:border-green-500 appearance-none dark:text-white dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
-              />
-              {/* Floating label for the username input */}
-              <label
-                htmlFor="username"
-                className="absolute text-sm text-green-600 dark:text-green-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
-              >
-                Username
-              </label>
-            </div>
-          </div>
-        )}
+
 
         {/* Email input field */}
         <div className="form-group">
