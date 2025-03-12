@@ -3,6 +3,7 @@ import { FaReact } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaFilter } from "react-icons/fa";
 import ChallengeList from "./ChallengeList/ChallengeList";
+import SearchBar from "./SearchBar/SearchBar";
 import { Challenge } from "./ChallengeCard/ChallengeCard";
 import GradientBlob from "../GradientBlob/GradientBlob";
 
@@ -82,70 +83,11 @@ const MainPage: React.FC = () => {
         </p>
       </div>
 
+      <SearchBar></SearchBar>
+
       {/* Challenge List */}
       <ChallengeList challenges={challenges} />
 
-      {/* Filters Section - Anchored to the Right */}
-      <div className="absolute right-10 top-[96px] p-6 rounded-lg shadow-md bg-[#00000057] text-white w-64">
-        
-        {/* Difficulty Filter - Accordion */}
-        <div className="mb-4">
-          <button
-            onClick={() => setIsDifficultyOpen(!isDifficultyOpen)}
-            className="w-full text-left text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer"
-          >
-            Difficulty
-            <MdKeyboardArrowDown
-              className={`transform transition-transform duration-600 ${isDifficultyOpen ? "rotate-180" : ""}`}
-            />
-          </button>
-          <div
-            className={`difficulty-content overflow-hidden transition-all duration-500 ease-in-out ${
-              isDifficultyOpen ? "max-h-[500px]" : "max-h-0"
-            }`}
-          >
-            <div className="flex flex-col gap-1 font-extralight">
-              {["Easy", "Medium", "Hard"].map((difficulty) => (
-                <label key={difficulty} className="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" className="accent-[#3a3a3a10]" />
-                  {difficulty}
-                </label>
-              ))}
-            </div>
-          </div>
-          <hr className="my-2 border-gray-500" />
-        </div>
-
-        {/* Challenge Type Filter - Accordion */}
-        <div>
-          <button
-            onClick={() => setIsChallengeTypeOpen(!isChallengeTypeOpen)}
-            className="w-full text-left text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer"
-          >
-            Challenge Type
-            <MdKeyboardArrowDown
-              className={`transform transition-transform ${isChallengeTypeOpen ? "rotate-180" : ""}`}
-            />
-          </button>
-          <div
-            className={`challenge-type-content overflow-hidden transition-all duration-500 ease-in-out ${
-              isChallengeTypeOpen ? "max-h-[500px]" : "max-h-0"
-            }`}
-          >
-            <div className="flex flex-col gap-1 font-extralight">
-              {["Build a component", "Fix a component", "Style a component", "Refactor a component"].map(
-                (type) => (
-                  <label key={type} className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" className="accent-[#3a3a3a10]" />
-                    {type}
-                  </label>
-                )
-              )}
-            </div>
-          </div>
-          <hr className="my-2 border-gray-500" />
-        </div>
-      </div>
 
     </div>
   );
