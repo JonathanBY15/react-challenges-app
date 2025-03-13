@@ -48,11 +48,11 @@ const SearchBar: React.FC = () => {
     <div className="relative w-full max-w-7xl flex items-center bg-[#00000057] text-white p-4 shadow-md rounded-lg gap-4">
       {/* Search Input */}
         <div className="flex-grow flex items-center bg-[#ffffff10] px-4 py-2 rounded-lg">
-            <MdSearch className="text-gray-300 text-xl" />
+            <MdSearch className="text-gray-300 text-sm md:text-xl" />
             <input
             type="text"
             placeholder="Search challenges..."
-            className="bg-transparent text-white placeholder-gray-400 focus:outline-none ml-2 w-full"
+            className="bg-transparent text-white placeholder-gray-400 focus:outline-none ml-2 w-full text-xs md:text-lg"
             />
         </div>
 
@@ -66,7 +66,7 @@ const SearchBar: React.FC = () => {
                 aria-expanded={isFilterOpen ? "true" : "false"}
                 className="flex items-center gap-2 px-3 py-2 bg-[#ffffff10] rounded-lg cursor-pointer hover:bg-[#ffffff20] transition"
                 >
-                <IoFilter className="text-[#a8a8a8] text-xl" />
+                <IoFilter className="text-[#a8a8a8] text-sm md:text-xl" />
                 <MdKeyboardArrowDown className={`transform transition-transform duration-500 ${isFilterOpen ? "-rotate-180" : ""}`} />
             </button>
 

@@ -62,7 +62,7 @@ const MainPage: React.FC = () => {
 
   return (
     // <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full p-[96px] relative">
-    <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full pt-[96px] pb-[40px] px-[40px] relative overflow-auto gap-8">
+    <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full pt-[96px] pb-[40px] px-[40px] relative overflow-auto gap-2 sm:gap-4">
       <GradientBlob size={300} top="10%" left="10%" />
       <GradientBlob size={250} bottom="20%" right="15%" opacity={0.5} animationDelay="1s" />
       <GradientBlob size={200} top="50%" left="50%" opacity={0.7} animationDelay="2s" />
@@ -72,13 +72,13 @@ const MainPage: React.FC = () => {
       {/* Heading and Subheading */}
       <div className="w-full max-w-3xl">
         <div className="flex items-center gap-5 mb-2">
-          <div className="p-4 rounded-2xl shadow-lg bg-gradient-to-r from-blue-500 to-indigo-600 relative">
+          <div className="p-3 sm:p-4 rounded-2xl shadow-lg bg-gradient-to-r from-blue-500 to-indigo-600 relative">
             <div className="absolute inset-0 rounded-full bg-blue-400 opacity-40 blur-lg"></div>
-            <FaReact className="text-white text-2xl sm:text-xl md:text-4xl relative z-10" />
+            <FaReact className="text-white text-xl md:text-3xl lg:text-4xl relative z-10" />
           </div>
-          <h1 className="text-white text-2xl sm:text-xl md:text-5xl font-bold">React Coding Challenges</h1>
+          <h1 className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">React Coding Challenges</h1>
         </div>
-        <p className="text-gray-300 text-base sm:text-md md:text-lg mb-6">
+        <p className="text-gray-300 text-base sm:text-md md:text-lg lg:text-xl mb-6">
           20+ React coding challenges to practice your frontend skills and prepare for interviews.
         </p>
       </div>
