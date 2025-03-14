@@ -76,9 +76,9 @@ const MainPage: React.FC = () => {
             <div className="absolute inset-0 rounded-full bg-blue-400 opacity-40 blur-lg"></div>
             <FaReact className="text-white text-xl md:text-3xl lg:text-4xl relative z-10" />
           </div>
-          <h1 className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">React Coding Challenges</h1>
+          <h1 className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-medium">React Coding Challenges</h1>
         </div>
-        <p className="text-gray-300 text-base sm:text-md md:text-lg lg:text-xl mb-6">
+        <p className="text-gray-300 text-base sm:text-md md:text-lg lg:text-xl mb-6 font-normal">
           20+ React coding challenges to practice your frontend skills and prepare for interviews.
         </p>
       </div>

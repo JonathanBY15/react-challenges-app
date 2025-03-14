@@ -1,18 +1,6 @@
-/**
- * CodeEditor component to display a <ChallengeInfo>, code editor, file explorer, and live preview.
- * 
- * Fetches challenge data(json), displays the challenge name and description, renders a split code editor and file explorer, 
- * and provides a live preview of the code in the challenge.
- * 
- * There is a JSON file for each challenge in "react-challenges-app\src\data\challenge-data" that stores the data for that challenge.
- * 
- * @component
- * @returns {JSX.Element} The rendered CodeEditor component.
- */
-
 import React, { useState, useEffect } from "react";
-import ChallengeInfo, { Challenge } from "../ChallengeInfo/ChallengeInfo";
-import "./CodeEditor.css";
+import ChallengeInfo, { Challenge } from "../../ChallengeInfo/ChallengeInfo";
+import "./CodeEditorMobile.css";
 import { SandpackProvider, SandpackLayout, SandpackFileExplorer, SandpackCodeEditor, SandpackPreview } from "@codesandbox/sandpack-react";
 import { monokaiPro } from "@codesandbox/sandpack-themes";
 import Split from "react-split";
@@ -34,10 +22,9 @@ const useStoredSizes = (key: string, defaultSizes: number[]) => {
   return [sizes, handleDrag] as const;
 };
 
-const CodeEditor = () => {
+const CodeEditorMobile = () => {
   const [challengeData, setChallengeData] = useState<Challenge | null>(null);
-  const [sizesHorizontal, handleDragHorizontal] = useStoredSizes("split-sizes-horizontal", [20, 40, 40]);
-  const [sizesVertical, handleDragVertical] = useStoredSizes("split-sizes-vertical", [70, 30]);
+  const [sizesVertical, handleDragVertical] = useStoredSizes("split-sizes-vertical-mobile", [70, 30]);
 
   // Fetch challenge data on mount
   useEffect(() => {
@@ -61,28 +48,28 @@ const CodeEditor = () => {
 
   return (
     <SandpackProvider files={files} theme={monokaiPro} template="react">
-      {/* <Navbar></Navbar> */}
       <SandpackLayout>
-        <Split className="split" minSize={364} snapOffset={0} sizes={sizesHorizontal} onDragEnd={handleDragHorizontal}>
-          <div className="challenge-description-window">
-            {/* Challenge Description Pane */}
-            <ChallengeInfo challenge={challengeData} />
-          </div>
-          <div className="explorer-editor-container">
-            {/* Editor and File Explorer Panes */}
-            <Split direction="vertical" minSize={200} snapOffset={0} sizes={sizesVertical} onDragEnd={handleDragVertical}>
+        {/* Stacked vertically layout */}
+        <div className="challenge-description-window">
+          {/* Challenge Description Pane */}
+          <ChallengeInfo challenge={challengeData} />
+        </div>
+        <div className="explorer-editor-container">
+          {/* Editor and File Explorer Panes */}
+          <Split direction="vertical" minSize={200} snapOffset={0} sizes={sizesVertical} onDragEnd={handleDragVertical}>
+            <div className="editor-file-container">
               <SandpackCodeEditor closableTabs showTabs />
               <SandpackFileExplorer />
-            </Split>
-          </div>
-          <div className="preview-container">
-            {/* Live Preview Pane */}
-            <SandpackPreview showNavigator showOpenInCodeSandbox={false} />
-          </div>
-        </Split>
+            </div>
+          </Split>
+        </div>
+        <div className="preview-container">
+          {/* Live Preview Pane */}
+          <SandpackPreview showNavigator showOpenInCodeSandbox={false} />
+        </div>
       </SandpackLayout>
     </SandpackProvider>
   );
 };
 
-export default CodeEditor;
+export default CodeEditorMobile;

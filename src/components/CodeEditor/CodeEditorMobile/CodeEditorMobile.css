@@ -1,0 +1,64 @@
+.sp-wrapper {
+  width: 100%;
+  padding-top: 56px !important; /* Push content below the fixed navbar */
+}
+
+.sp-layout {
+  width: 100vw;
+  height: calc(100vh - 56px);
+}
+
+.sp-preview {
+  height: calc(100vh - 56px) !important;
+  width: 100%;
+}
+
+.sp-file-explorer,
+.sp-editor {
+  width: 100% !important;
+}
+
+.explorer-editor-container {
+  display: flex;
+}
+
+.explorer-editor-container,
+.preview-container {
+  width: 100%;
+}
+
+.explorer-editor-container div,
+.preview-container div {
+  width: 100%;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.gutter {
+  background-color: rgb(50, 50, 50);
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter-vertical {
+  cursor: row-resize;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+}
+
+.challenge-description-window {
+  padding: 6px 10px;
+}
+
+.editor-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #181818;
+  color: rgb(200, 200, 200);
+  padding: 10px 20px;
+  height: 48px;
+}
