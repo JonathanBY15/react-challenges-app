@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaReact } from "react-icons/fa";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import { FaFilter } from "react-icons/fa";
 import ChallengeList from "./ChallengeList/ChallengeList";
 import SearchBar from "./SearchBar/SearchBar";
 import { Challenge } from "./ChallengeCard/ChallengeCard";
 import GradientBlob from "../GradientBlob/GradientBlob";
 
 const MainPage: React.FC = () => {
-  const [isDifficultyOpen, setIsDifficultyOpen] = useState(true);
-  const [isChallengeTypeOpen, setIsChallengeTypeOpen] = useState(true);
-
   const challenges: Challenge[] = [
     { name: "Array Manipulation", number: 1, difficulty: "Easy" },
     { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
@@ -87,8 +82,6 @@ const MainPage: React.FC = () => {
 
       {/* Challenge List */}
       <ChallengeList challenges={challenges} />
-
-
     </div>
   );
 };
