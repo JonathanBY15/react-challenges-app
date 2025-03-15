@@ -1,5 +1,5 @@
 /**
- * A ChallengeCard component that displays information about a coding challenge.
+ * A ChallengeCard component that displays information about a coding challenge. (li)
  *
  * @type {object} Challenge
  * @property {string} name - The name of the challenge.
@@ -11,7 +11,7 @@
  * @property {Challenge} challenge - The challenge details to display.
  *
  * @param {ChallengeCardProps} props - The props for the ChallengeCard component.
- * @returns {JSX.Element} The rendered ChallengeCard component.
+ * @returns {JSX.Element} The rendered ChallengeCard component. (li)
  */
 
 import React from "react";
