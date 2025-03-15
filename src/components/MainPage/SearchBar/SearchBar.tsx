@@ -1,3 +1,38 @@
+/**
+ * SearchBar Component
+ *
+ * A responsive search bar component with filtering options for difficulty levels and challenge types.
+ * Supports both mobile and desktop views with dropdown selections.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered SearchBar component.
+ *
+ * @description
+ * - Provides a search input for challenges.
+ * - Allows filtering by difficulty (Easy, Medium, Hard).
+ * - Allows filtering by challenge type (Build, Fix, Style, Refactor).
+ * - Uses dropdowns for filtering on desktop and a mobile-friendly filter menu.
+ *
+ * @state
+ * @property {boolean} isDifficultyOpen - Controls the visibility of the difficulty dropdown.
+ * @property {boolean} isChallengeTypeOpen - Controls the visibility of the challenge type dropdown.
+ * @property {boolean} isFilterOpen - Controls the visibility of the mobile filter menu.
+ * @property {string[]} selectedDifficulties - Stores selected difficulty levels.
+ * @property {string[]} selectedTypes - Stores selected challenge types.
+ *
+ * @function toggleDifficulty
+ * @param {string} difficulty - The difficulty level to toggle.
+ * @description Adds or removes the selected difficulty from the state.
+ *
+ * @function toggleType
+ * @param {string} type - The challenge type to toggle.
+ * @description Adds or removes the selected challenge type from the state.
+ *
+ * @useEffect
+ * @description Closes dropdowns when clicking outside of them.
+ */
+
+
 import { useState, useEffect, useRef } from "react";
 import { MdSearch, MdKeyboardArrowDown } from "react-icons/md";
 import { IoFilter } from "react-icons/io5";
@@ -14,6 +49,7 @@ const SearchBar: React.FC = () => {
   const difficultyRef = useRef<HTMLDivElement>(null);
   const challengeTypeRef = useRef<HTMLDivElement>(null);
 
+  // Function that toggles difficulty filters (Check and uncheck difficulties)
   const toggleDifficulty = (difficulty: string) => {
     setSelectedDifficulties((prev) =>
       prev.includes(difficulty)
@@ -22,6 +58,7 @@ const SearchBar: React.FC = () => {
     );
   };
 
+  // Function that toggles challenge type filters (Check and uncheck challenge types)
   const toggleType = (type: string) => {
     setSelectedTypes((prev) =>
       prev.includes(type) ? prev.filter((item) => item !== type) : [...prev, type]
