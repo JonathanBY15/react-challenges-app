@@ -56,7 +56,6 @@ const MainPage: React.FC = () => {
   ];
 
   return (
-    // <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full p-[96px] relative">
     <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full pt-[96px] pb-[40px] px-[40px] relative overflow-auto gap-2 sm:gap-4">
       <GradientBlob size={300} top="10%" left="10%" />
       <GradientBlob size={250} bottom="20%" right="15%" opacity={0.5} animationDelay="1s" />

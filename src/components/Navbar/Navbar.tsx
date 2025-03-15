@@ -1,15 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaReact } from "react-icons/fa"; // Import React icon
+import { FaReact } from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="navbar flex items-center justify-between p-4 bg-gray-800">
+    // Outer navbar div
+    <div className="navbar flex items-center justify-between">
       {/* LeetComponents with React logo */}
-      <span className="cursor-pointer flex items-center" onClick={() => navigate("/")}>
+      <span className="flex items-center" onClick={() => navigate("/")}>
         {/* React logo div */}
         <div className="p-2 rounded-xl shadow-lg bg-gradient-to-r from-blue-500 to-indigo-600 relative mr-1">
           <div className="absolute inset-0 rounded-full bg-blue-400 opacity-40 blur-lg"></div>
@@ -19,7 +20,7 @@ const Navbar: React.FC = () => {
       </span>
       
       {/* Auth link */}
-      <span className="cursor-pointer ml-4 text-white" onClick={() => navigate("/auth")}>Auth</span>
+      <span className="ml-4 text-white" onClick={() => navigate("/auth")}>Auth</span>
     </div>
   );
 };
