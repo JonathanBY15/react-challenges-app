@@ -1,3 +1,14 @@
+/**
+ * CodeEditorMobile component to display a <ChallengeInfo>, code editor, file explorer, and live preview.
+ * 
+ * Fetches challenge data(json), displays the challenge name and description, renders a split code editor and file explorer, 
+ * and provides a live preview of the code in the challenge.
+ * 
+ * There is a JSON file for each challenge in "react-challenges-app\src\data\challenge-data" that stores the data for that challenge.
+ * 
+ * @component
+ */
+
 import React, { useState, useEffect } from "react";
 import ChallengeInfo, { Challenge } from "../../ChallengeInfo/ChallengeInfo";
 import "./CodeEditorMobile.css";
@@ -65,8 +76,6 @@ const CodeEditorMobile: React.FC = () => {
             <div className="challenge-description-window">
               <ChallengeInfo challenge={challengeData} />
             </div>
-
-            
 
             {/* File Explorer */}
             <div className="file-explorer-container">
