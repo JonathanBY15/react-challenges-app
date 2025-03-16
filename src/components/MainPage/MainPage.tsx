@@ -1,3 +1,28 @@
+/**
+ * MainPage Component
+ *
+ * The main page displaying a list of React coding challenges.
+ * Includes a search bar, challenge list, and animated gradient blobs for styling.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered MainPage component.
+ *
+ * @description
+ * - Displays a searchable list of React coding challenges.
+ * - Includes a search bar for filtering challenges.
+ * - Uses animated gradient blobs for visual enhancement.
+ * - Provides a responsive layout optimized for different screen sizes.
+ *
+ * @state
+ * @property {Challenge[]} challenges - A list of coding challenges with name, number, and difficulty.
+ *
+ * @children
+ * - `<SearchBar />` - A search input for filtering challenges.
+ * - `<ChallengeList />` - Displays the list of available challenges.
+ * - `<GradientBlob />` - Decorative animated blobs for background styling.
+ */
+
+
 import React from "react";
 import { FaReact } from "react-icons/fa";
 import ChallengeList from "./ChallengeList/ChallengeList";
@@ -6,6 +31,7 @@ import { Challenge } from "./ChallengeCard/ChallengeCard";
 import GradientBlob from "../GradientBlob/GradientBlob";
 
 const MainPage: React.FC = () => {
+  // List of challenges (Currently static)
   const challenges: Challenge[] = [
     { name: "Array Manipulation", number: 1, difficulty: "Easy" },
     { name: "Sorting Algorithm", number: 2, difficulty: "Medium" },
@@ -56,7 +82,9 @@ const MainPage: React.FC = () => {
   ];
 
   return (
+    // Outer MainPage container
     <div className="flex flex-col justify-start items-center min-h-screen bg-[#282828] w-full pt-[96px] pb-[40px] px-[40px] relative overflow-auto gap-2 sm:gap-4">
+      {/** GradientBlob's for style */}
       <GradientBlob size={300} top="10%" left="10%" />
       <GradientBlob size={250} bottom="20%" right="15%" opacity={0.5} animationDelay="1s" />
       <GradientBlob size={200} top="50%" left="50%" opacity={0.7} animationDelay="2s" />
@@ -77,6 +105,7 @@ const MainPage: React.FC = () => {
         </p>
       </div>
 
+      {/* Search Bar and Filters */}
       <SearchBar></SearchBar>
 
       {/* Challenge List */}
