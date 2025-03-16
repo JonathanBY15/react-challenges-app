@@ -7,6 +7,16 @@
 }
 
 .tiny-width {
-  font-size: 12px;
+  font-size: 10px;
+  padding: 1px 4px;
+}
+
+.ex-tiny-width {
+  font-size: 10px;
+  padding: 1px 2px;
+}
+
+.xx-tiny-width {
+  font-size: 9px;
   padding: 0;
 }

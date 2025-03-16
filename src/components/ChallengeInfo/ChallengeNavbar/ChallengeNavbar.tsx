@@ -59,7 +59,13 @@ const ChallengeNavbar: React.FC<ChallengeNavbarProps> = ({ activeTab, setActiveT
   // Determines button size class based on the navbar width.
   // Class styles are inside "ChallengeNavbar.css"
   let smallButtonClass = "";
-  if (navbarWidth < 400) {
+  if (navbarWidth < 318) {
+    smallButtonClass = "xx-tiny-width";
+  }
+   else if (navbarWidth < 334) {
+    smallButtonClass = "ex-tiny-width";
+  }
+  else if (navbarWidth < 400) {
     smallButtonClass = "tiny-width";
   } else if (navbarWidth < 428) {
     smallButtonClass = "small-width";

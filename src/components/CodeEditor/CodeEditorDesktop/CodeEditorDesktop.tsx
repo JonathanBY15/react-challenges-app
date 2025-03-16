@@ -81,7 +81,8 @@ const CodeEditorDesktop = () => {
     <SandpackProvider files={files} theme={monokaiPro} template="react">
       {/* <Navbar></Navbar> */}
       <SandpackLayout>
-        <Split className="split" minSize={364} snapOffset={0} sizes={sizesHorizontal} onDragEnd={handleDragHorizontal}>
+        <Split className="split" minSize={302} snapOffset={0} sizes={sizesHorizontal} onDragEnd={handleDragHorizontal}>
+          {/** minSize=302 prevents ChallengeNavbar from losing style */}
           <div className="challenge-description-window">
             {/* Challenge Description Pane */}
             <ChallengeInfo challenge={challengeData} />
