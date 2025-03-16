@@ -1,6 +1,5 @@
 /**
- * `CodeEditor` is a React functional component that conditionally renders a desktop or mobile version
- * of the code editor based on the screen size.
+ * Conditionally renders a desktop or mobile version of the code editor based on the screen size.
  * 
  * Mobile Breakpoint: 1023px
  * 
