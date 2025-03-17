@@ -1,3 +1,15 @@
-# React + TypeScript + Vite
+# LeetComponents (In Progress)
+React coding challenges to practice your frontend skills and prepare for interviews.
 
-![LeetComponent Preview](/preview.gif)
+### Currently working on the UI
+![LeetComponent Preview](./public/preview.gif)
+
+---
+
+## Roadmap
+
+- **User Auth**  
+  Implement secure user authentication to allow users to create accounts, log in, and manage their profiles. This will enable personalized experiences such as saving progress, tracking solved challenges, and managing preferences.
+
+- **Code Submission & Evaluation**  
+  Implement functionality for users to submit their solutions to coding challenges through the existing interactive code editor. Once submitted, the code will be automatically evaluated against predefined test cases.
