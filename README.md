@@ -8,6 +8,9 @@ React coding challenges to practice your frontend skills and prepare for intervi
 
 ## Roadmap
 
+- **Add Challenges**  
+  Replace placeholder challenge data with actual challenges. Challenges will have their own starter code, solutions, and test cases.
+
 - **User Auth**  
   Implement secure user authentication to allow users to create accounts, log in, and manage their profiles. This will enable personalized experiences such as saving progress, tracking solved challenges, and managing preferences.
 
