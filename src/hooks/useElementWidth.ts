@@ -1,5 +1,21 @@
 import { useState, useEffect } from "react";
 
+/**
+ * Custom hook to track the width of a given HTML element.
+ * Uses the ResizeObserver API to update the width dynamically when the element resizes.
+ *
+ * @param {React.RefObject<HTMLElement | null>} elementRef - A ref object pointing to the target element.
+ * @returns {number} The current width of the element in pixels.
+ *
+ * @example
+ * ```tsx
+ * const ref = useRef<HTMLDivElement | null>(null);
+ * const width = useElementWidth(ref);
+ * 
+ * return <div ref={ref}>Width: {width}px</div>;
+ * ```
+ */
+
 const useElementWidth = (elementRef: React.RefObject<HTMLElement | null>) => {
   const [width, setWidth] = useState(0);
 
