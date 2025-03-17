@@ -81,7 +81,7 @@ const ChallengeNavbar: React.FC<ChallengeNavbarProps> = ({ activeTab, setActiveT
       {tabs.map((tab) => (
         <button
           key={tab.name}
-          className={`flex items-center py-2 px-4 rounded transition-colors cursor-pointer duration-300 
+          className={`flex items-center py-2 px-4 rounded transition-colors cursor-pointer duration-300
             ${smallButtonClass} 
             ${activeTab === tab.name ? "bg-[#414141]" : "text-white hover:bg-[#2e2e2e]"}`}
           onClick={() => setActiveTab(tab.name)}
