@@ -10,20 +10,48 @@
   height: 1000px;
 }
 
-.challenge-content h1 {
-  font-size: 24px;
-}
-
-.challenge-content p {
-  font-size: 16px;
-}
-
 .challenge-content ul {
   list-style-type: disc;
   list-style-position: inside;
-  font-size: 16px;
 }
 
 .preview-gif {
   cursor: pointer;
+}
+
+/* Responsive classes from useElementWidth */
+.ex-small-content h1 {
+  font-size: 20px;
+}
+
+.small-content h1 {
+  font-size: 20px;
+}
+
+.medium-content h1 {
+  font-size: 24px;
+}
+
+.large-content h1 {
+  font-size: 24px;
+}
+
+.ex-small-content p,
+.ex-small-content ul {
+  font-size: 14px;
+}
+
+.small-content p,
+.small-content ul {
+  font-size: 14px;
+}
+
+.medium-content p,
+.medium-content ul {
+  font-size: 16px;
+}
+
+.large-content p,
+.large-content ul {
+  font-size: 16px;
 }

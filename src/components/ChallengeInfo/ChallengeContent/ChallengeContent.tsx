@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./ChallengeContent.css";
 import SolutionCodeBlock from "../SolutionCodeBlock/SolutionCodeBlock";
 import PreviewModal from "../PreviewModal/PreviewModal"; // Import the modal component
+import useElementWidth from "../../../hooks/useElementWidth";
 
 interface SolutionFile {
   fileType: string;
@@ -11,7 +12,7 @@ interface SolutionFile {
 interface ContentElement {
   type: "p" | "h1" | "h2" | "ul" | "code";
   content?: string | string[];
-  files?: SolutionFile[]; // Make files optional since not all types need it
+  files?: SolutionFile[];
 }
 
 interface ChallengeContentProps {
@@ -23,7 +24,7 @@ interface ChallengeContentProps {
 }
 
 /**
- * Converts challenge json files into corresponding React elements.
+ * Converts challenge JSON files into corresponding React elements.
  * Cases: p, h1, h2, ul, code
  */
 const renderContent = (contentArray: ContentElement[]) => {
@@ -60,12 +61,7 @@ const renderContent = (contentArray: ContentElement[]) => {
 /**
  * The main component that handles rendering the challenge content based on the active tab.
  * It displays the challenge description, preview, test cases, and solution, with a modal for preview images.
- * 
- * @param {string} activeTab - The currently active tab ("Description", "Preview", "Test Cases", "Solution").
- * @param {ContentElement[]} description - The description content to be displayed when the "Description" tab is active.
- * @param {string} previewGif - The URL of the preview gif to be displayed when the "Preview" tab is active.
- * @param {ContentElement[]} testCases - The test cases to be displayed when the "Test Cases" tab is active.
- * @param {ContentElement[]} solution - The solution content to be displayed when the "Solution" tab is active.
+ * Uses useElementWidth to adjust styles based on the container width.
  */
 const ChallengeContent: React.FC<ChallengeContentProps> = ({
   activeTab,
@@ -74,10 +70,18 @@ const ChallengeContent: React.FC<ChallengeContentProps> = ({
   testCases,
   solution,
 }) => {
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const width = useElementWidth(contentRef);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Determine content class based on width
+  let sizeClass = "large-content";
+  if (width < 350) sizeClass = "ex-small-content";
+  else if (width < 388) sizeClass = "small-content";
+  else if (width < 455) sizeClass = "medium-content";
+
   return (
-    <div className="challenge-content">
+    <div ref={contentRef} className={`challenge-content ${sizeClass}`}>
       {activeTab === "Description" && renderContent(description)}
       {activeTab === "Preview" && (
         <>
