@@ -5,7 +5,6 @@
 }
 
 .challenge-header h1 {
-  font-size: 32px;
   font-weight: 600;
   margin: 0;
   display: flex;
@@ -16,10 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
   margin-top: 4px;
-  font-size: 20px;
   color: #e9e9e9;
   text-align: center;
   border-radius: 5px;
@@ -37,22 +33,42 @@
   background-color: #d1262662;
 }
 
-.xx-small-header h1 {
-  font-size: 14px;
-}
-
 .ex-small-header h1 {
-  font-size: 16px;
-}
-
-.small-header h1 {
-  font-size: 18px;
-}
-
-.medium-header h1 {
   font-size: 20px;
 }
 
+.small-header h1 {
+  font-size: 26px;
+}
+
+.medium-header h1 {
+  font-size: 28px;
+}
+
 .large-header h1 {
-  font-size: 24px;
+  font-size: 32px;
+}
+
+.ex-small-header .badge {
+  font-size: 14px;
+  gap: 3px;
+  padding: 2px 6px;
+}
+
+.small-header .badge {
+  font-size: 16px;
+  gap: 4px;
+  padding: 3px 8px;
+}
+
+.medium-header .badge {
+  font-size: 18px;
+  gap: 5px;
+  padding: 4px 8px;
+}
+
+.large-header .badge {
+  font-size: 20px;
+  gap: 5px;
+  padding: 4px 10px;
 }
